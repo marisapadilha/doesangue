@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- HTML
+    HYPERTEX
+    Textos que contem link para outros documentos
+
+
+
+     MARKUP
+     Texto que conterá marcaçoes.
+     <tags>
+     
+     LANGUAGE
+     Para me comunicar de certa maneira. Sintaxe especifica para escrita.
+
+
+
+
+-->
+<HTML>
+
+<head>
+    <!--São configuraçoes da minha pagina-->
+    <title> Doe Vida! Doe Sangue! </title>
+  
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--Aqui vem todo o conteudo visivel para o usuario dentro de certa pagina-->
+    <header>
+          
+        <img 
+        class="logo"
+        src="/logo.png"
+        alt="Imagem de DOE">
+        <h2> A sua doação importa</h2>
+        <p>Até 3 vidas com uma doação</p>
+        <p>Mais de 38.000 doaçoes são necessarias todos os dias
+            <p>Apenas 1,9% da população brasileira, doa sangue.</p>
+            <button> Quero ajudar</button>
+    </header>
+
+    <section class= "form hide">
+        <h2>Entre na lista de doadores</h2>
+        <form action="/" method="POST">
+    <input 
+    type="text"
+    name="name"
+    placeholder="Nome completo">
+
+    <input 
+    type="text"
+    name="email"
+    placeholder="email">
+
+    <input 
+    type="text"
+    name="blood"
+    placeholder="Tipo sanguineo">
+
+    <button> Quero ajudar</button>
+
+    </form>
+</section>
+
+
+
+    <main>
+        
+       <h2>Ultimos <span>doadores</span></h2>
+
+       <section class="donors">
+
+        
+
+        {% for donor in donors %}
+
+        
+        <div class="donor">
+                <div class="blood">{{donor.blood}}</div>
+                <p>{{donor.name}}</p>
+            </div>
+            
+            {% endfor %}
+            
+       </section>
+    
+    </main>
+
+<footer>Com <span>❤</span>  Marisa</footer>
+
+<script src="/script.js"></script>
+<script>
+    console.log(donors)
+</script>
+
+</body>
+
+
+
+</HTML>
